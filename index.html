@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LIFF Button App</title>
+  <script src="https://static.line-scdn.netsdk.js</script>
+</head>
+<body>
+  <h1>LINEミニアプリ</h1>
+  <button onclick="onButtonClick()">ボタンを押す</button>
+
+  <script>
+    async function main() {
+      await liff.init({ liffId: "YOUR_LIFF_ID" }); // LIFF IDをここに入れる
+      if (!liff.isLoggedIn()) {
+        liff.login();
+      }
+    }
+
+    function onButtonClick() {
+      alert("ボタンが押されました！");
+    }
+
+    main();
+  </script>
+</body>
+</html>
